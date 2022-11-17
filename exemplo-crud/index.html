@@ -1,0 +1,30 @@
+<!DOCTYPE html><!-- indica que pode usar tags do HTML5-->
+<html lang="en">
+<head>
+    <title>Exemplo CRUD</title>
+</head>
+<body>
+    <h1>Exemplo CRUD usando a api back-end.</h1>
+    <div id='Lista'>minha DIV onde vamos colocar a lista de API</div>
+    <script>
+       
+        
+       // request via java script ajax 4 passos
+        //01 criar variável
+        
+        ajax = new XMLHttpRequest();
+        //definição do  nosso request (endereço e forma)
+        ajax.open("GET", "http://elismar.herokuapp.com/api/usuario/");
+        // manda de fato a request
+        ajax.send();
+        // execução quando tiver a devolutiva do request
+        ajax.onload = function(){
+            lista = this.responseText;
+            console.log(lista);
+            ducument.getElementById('lista').innerHTML = lista;
+        }
+        
+        
+    </script>
+</body>
+</html>
